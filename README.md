@@ -1,4 +1,9 @@
-# Coffee & Cloud - Ep05 - Deploy a Serverless API in 30 mins
+# Deploy a Serverless API in 30 mins
+
+_Presented in Ep05 of the Coffee & Cloud Series_
+
+Contact: https://linktr.ee/awsukstartups
+
 
 ## Objective
 
