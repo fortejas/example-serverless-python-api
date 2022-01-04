@@ -35,10 +35,10 @@ $ cd sample-api
 
 ### 2. Add the CDK resources for the application
 
-In the generated `lib/sample-api-stack.ts` add the DynamoDB & Lambda resources and allow the Lambda Function to do read writes on the DynamoDB table.
+In the generated `lib/sample-api-stack.ts` add the DynamoDB Table, Lambda function & the API Gateway definition and allow the function to do read writes on the DynamoDB table.
 
 ```typescript
-    const ddb = new Table(this, 'Table', {
+    const table = new Table(this, 'Table', {
       partitionKey: { type: AttributeType.STRING, name: 'id' },
     })
 
@@ -52,8 +52,14 @@ In the generated `lib/sample-api-stack.ts` add the DynamoDB & Lambda resources a
       }
     })
 
-    ddb.grantReadWriteData(func)
+    new LambdaRestApi(this, 'RestAPI', {
+      handler: func
+    })
+
+    table.grantReadWriteData(func)
 ```
+
+_Note: For the full code see [lib/sample-api-stack.ts](./lib/sample-api-stack.ts)_
 
 Note here we are using the `PythonFunction` construct here. This is a special construct that can perform a number of Python-based operations on your behalf. In this case, we want to include some Python libraries into our application.
 
