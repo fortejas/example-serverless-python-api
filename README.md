@@ -11,6 +11,8 @@ In this example, we will deploy a serverless Python function to API Gateway. The
 
 The scenario is that we are building an dashboard app to show times when a train leaves a station heading to a destination. Each time a train departs we want to update our app to show the destination and the time that it departed.
 
+<img src="./images/architecture.png" width=800 />
+
 ## Requirements
 
 - AWS Account
