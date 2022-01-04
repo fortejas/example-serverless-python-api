@@ -6,7 +6,7 @@ import { PythonFunction } from '@aws-cdk/aws-lambda-python-alpha'
 import { LambdaRestApi } from 'aws-cdk-lib/aws-apigateway';
 
 
-export class Ep05ServerlessApiStack extends Stack {
+export class ServerlessApiStack extends Stack {
   constructor(scope: Construct, id: string, props?: StackProps) {
     super(scope, id, props);
 
